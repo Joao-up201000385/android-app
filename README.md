@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-Ola mundo...aqui vai mais uma tentativa!
 =======
 [Fork do grupo arqsoftdcc2016]
 
