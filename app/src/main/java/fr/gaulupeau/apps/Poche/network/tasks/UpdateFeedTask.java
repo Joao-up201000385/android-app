@@ -2,6 +2,7 @@ package fr.gaulupeau.apps.Poche.network.tasks;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.text.Html;
 import android.util.Log;
 import android.util.Xml;
 
@@ -32,12 +33,23 @@ public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
     public enum UpdateType { Full, Fast }
 
     public enum FeedType {
-        Main("home"), Favorite("fav"), Archive("archive");
+        Main("home", "unread.xml"),
+        Favorite("fav", "starred.xml"),
+        Archive("archive", "archive.xml");
 
-        String urlPart;
+        String urlPartV1, urlPartV2;
 
-        FeedType(String urlPart) {
-            this.urlPart = urlPart;
+        FeedType(String urlPartV1, String urlPartV2) {
+            this.urlPartV1 = urlPartV1;
+            this.urlPartV2 = urlPartV2;
+        }
+
+        public String getUrlPart(int wallabagVersion) {
+            switch(wallabagVersion) {
+                case 1: return urlPartV1;
+                case 2: return urlPartV2;
+            }
+            return "";
         }
     }
 
@@ -46,18 +58,20 @@ public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
     private String baseURL;
     private String apiUserId;
     private String apiToken;
+    private int wallabagVersion;
     private CallbackInterface callback;
     private FeedType feedType;
     private UpdateType updateType;
 
     private String errorMessage;
 
-    public UpdateFeedTask(String baseURL, String apiUserId, String apiToken,
+    public UpdateFeedTask(String baseURL, String apiUserId, String apiToken, int wallabagVersion,
                           CallbackInterface callback,
                           FeedType feedType, UpdateType updateType) {
         this.baseURL = baseURL;
         this.apiUserId = apiUserId;
         this.apiToken = apiToken;
+        this.wallabagVersion = wallabagVersion;
         this.callback = callback;
         this.feedType = feedType;
         this.updateType = updateType;
@@ -210,10 +224,19 @@ public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
     }
 
     private String getFeedUrl(FeedType feedType) {
-        return baseURL + "/?feed"
-                + "&type=" + feedType.urlPart
-                + "&user_id=" + apiUserId
-                + "&token=" + apiToken;
+        if(wallabagVersion == 1) {
+            return baseURL + "/?feed"
+                    + "&type=" + feedType.getUrlPart(wallabagVersion)
+                    + "&user_id=" + apiUserId
+                    + "&token=" + apiToken;
+        } else if (wallabagVersion == 2) {
+            return baseURL + "/"
+                    + apiUserId + "/"
+                    + apiToken + "/"
+                    + feedType.getUrlPart(wallabagVersion);
+        }
+
+        return "";
     }
 
     private InputStream getInputStream(String urlStr) throws IOException {
@@ -235,6 +258,7 @@ public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
     private void processFeed(ArticleDao articleDao, InputStream is,
                              FeedType feedType, UpdateType updateType, Integer latestID)
             throws XmlPullParserException, IOException {
+        Log.d(TAG, "processFeed() latestID=" + latestID);
         // TODO: use parser.require() all over the place?
 
         XmlPullParser parser = Xml.newPullParser();
@@ -247,13 +271,23 @@ public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
         goToElement(parser, "channel", true);
         parser.next();
 
-        DateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.US);
+        DateFormat dateFormat;
+        if(wallabagVersion == 1) {
+            // <pubDate>Thu, 14 Apr 2016 18:35:11 +0000</pubDate>
+            dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.US);
+        }
+        else { // v2
+            // <pubDate>Thu, 14 Apr 2016 16:28:06</pubDate>
+            dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss", Locale.US);
+        }
 
+        Log.d(TAG, "processFeed() starting to loop through all elements");
         while (parser.next() != XmlPullParser.END_DOCUMENT) {
             if (parser.getEventType() != XmlPullParser.START_TAG) {
                 continue;
             }
 
+            Log.v(TAG, "processFeed() parser.getName()=" + parser.getName());
             if ("item".equals(parser.getName())) {
                 if(feedType == FeedType.Main || feedType == FeedType.Archive
                         || (feedType == FeedType.Favorite && updateType == UpdateType.Full)) {
@@ -277,7 +311,7 @@ public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
                         existing = false;
                     }
 
-                    article.setTitle(item.title);
+                    article.setTitle(Html.fromHtml(item.title).toString());
                     article.setContent(item.description);
                     article.setUrl(item.link);
                     article.setArticleId(id);
@@ -308,6 +342,11 @@ public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
                     Article article = articleDao.queryBuilder()
                             .where(ArticleDao.Properties.ArticleId.eq(id))
                             .build().unique();
+                    if(article == null) {
+                        Log.w(TAG, "processFeed() Favorite: Fast; couldn't find article with ID: "
+                                + id);
+                        continue;
+                    }
 
                     if(article.getFavorite() != null && article.getFavorite()) continue;
 
@@ -417,16 +456,17 @@ public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
 
     private static Integer getIDFromURL(String url) {
         if(url != null) {
-            String marker = "id=";
-            int index = url.indexOf(marker);
-            if(index >= 0) {
-                String idStr = url.substring(index + marker.length());
-                try {
-                    return Integer.parseInt(idStr);
-                } catch (NumberFormatException ignored) {}
+            String[] markers = {"id=", "view/"};
+            for (String marker : markers) {
+                int index = url.indexOf(marker);
+                if(index >= 0) {
+                    String idStr = url.substring(index + marker.length());
+                    try {
+                        return Integer.parseInt(idStr);
+                    } catch (NumberFormatException ignored) {}
+                }
             }
         }
-
         return null;
     }
 

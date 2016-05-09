@@ -17,6 +17,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.mikepenz.aboutlibraries.Libs;
+import com.mikepenz.aboutlibraries.LibsBuilder;
+
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -186,6 +189,14 @@ public class ArticlesListActivity extends AppCompatActivity
             case R.id.menuUploadOfflineURLs:
                 uploadOfflineURLs();
                 return true;
+            case R.id.menuAbout:
+                new LibsBuilder()
+                        //provide a style (optional) (LIGHT, DARK, LIGHT_DARK_TOOLBAR)
+                        .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
+                        .withAboutIconShown(true)
+                        .withAboutVersionShown(true)
+                        .withAboutDescription(getResources().getString(R.string.aboutText))
+                        .start(this);
         }
 
         return super.onOptionsItemSelected(item);
@@ -272,7 +283,7 @@ public class ArticlesListActivity extends AppCompatActivity
             }
         } else if(WallabagConnection.isNetworkOnline()) {
             feedUpdater = new UpdateFeedTask(wallabagSettings.wallabagURL,
-                    wallabagSettings.userID, wallabagSettings.userToken, this, feedType, updateType);
+                    wallabagSettings.userID, wallabagSettings.userToken, settings.getInt(Settings.WALLABAG_VERSION, -1), this, feedType, updateType);
             feedUpdater.execute();
             result = true;
         } else {
