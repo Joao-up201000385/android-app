@@ -34,3 +34,6 @@ Say you have an account named "gdr" on "framabag.org" instance. The steps are as
 
 É para testar...
 e estou a testar.......
+
+----
+E ves isto? :)
