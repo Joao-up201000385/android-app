@@ -65,7 +65,6 @@ GAULUPEAU Jonathan — 2013-2015
     <string name="firstRun_d_optionalSettings_title">Обновите настройки</string>
     <string name="go_to_settings">Перейти в настройки</string>
     <string name="dismiss">Пропустить</string>
-    <string name="open_original">"Открыть первоисточник: "</string>
     <string name="settings_optionalCredentials">Опциональные данные пользователя</string>
     <string name="settings_optionalCredentialsDesc">Обычно используются для выгрузки на сервер</string>
     <string name="settings_username">Имя пользователя</string>
@@ -131,6 +130,7 @@ GAULUPEAU Jonathan — 2013-2015
     <string name="themeName_light_contrast">Светлая (контрастная)</string>
     <string name="themeName_dark">Тёмная</string>
     <string name="themeName_dark_contrast">Тёмная (контрастная)</string>
+    <string name="themeName_solarized">соляризации</string>
     <string name="settings_ui_fontSize">Размер шрифта статей (%)</string>
     <string name="settings_ui_serif">Шрифт с засечками для статей</string>
     <string name="menu_readArticle_increaseFontSize">Увеличить размер шрифта</string>
@@ -141,4 +141,16 @@ GAULUPEAU Jonathan — 2013-2015
         <item quantity="few">%d статьи</item>
         <item quantity="other">%d статей</item>
     </plurals>
+    <string name="menuTTS"> Текст в речь</string>
+    <string name="ttsAutoplayNextArticle">Автозапуск Следующая статья</string>
+    <string name="ttsLanguage">Выберите язык</string>
+    <string name="ttsVoice">выбрать тембр</string>
+    <string name="ttsVolume">Громкость</string>
+    <string name="ttsSpeed">Скорость</string>
+    <string name="ttsPlayPause">Пуск / Пауза</string>
+    <string name="ttsPitch">Тембр</string>
+    <string name="ttsOptions">опции</string>
+    <string name="ttsFastRewind">Назад</string>
+    <string name="ttsFastForward">Далее</string>
+    <string name="ttsError">Текст в речь ошибки</string>
 </resources>

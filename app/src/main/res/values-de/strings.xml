@@ -61,7 +61,6 @@ GAULUPEAU Jonathan — 2013-2015
     <string name="d_bag_fail_text">Es wurde keine URL zum Teilen gefunden:\n</string>
     <string name="firstRun_d_welcome">Willkommen bei wallabag</string>
     <string name="firstRun_d_configure">Um anzufangen, richte die App mit deiner wallabag Installation ein.</string>
-    <string name="open_original">"Öffne Original: "</string>
     <string name="settings_optionalCredentials">Optional Zugangsdaten</string>
     <string name="settings_optionalCredentialsDesc">Um zum Server zurück zu synchronisieren</string>
     <string name="settings_username">Benutzername</string>
@@ -134,5 +133,23 @@ GAULUPEAU Jonathan — 2013-2015
         <item quantity="one">%d Artikel</item>
         <item quantity="other">%d Artikel</item>
     </plurals>
-    <string name="dismiss"></string>
+    <string name="dismiss">Verwerfen</string>
+    <string name="go_to_settings">Gehe zu Einstellungen</string>
+    <string name="themeName_solarized">Solarized</string>
+    <string name="testConnection_errorMessage6">Falsche URL. Fehlercode: %d</string>
+    <string name="firstRun_d_optionalSettings_title">Aktualisiere Einstellungen</string>
+    <string name="testConnection_errorMessage5">Login fehlgeschlagen; prüfe die HTTP Auth Parameter. Fehlercode: %d</string>
+    <string name="firstRun_d_optionalSettings_message">Um Seiten mit der App zu speichern (und um lokale Änderungen zum Server zu senden), musst du Wallabag Nutzername und Passwort in den Einstellungen eintragen.</string>
+    <string name="menuTTS">Sprachsynthese</string>
+    <string name="ttsAutoplayNextArticle"> Autoplay Nächster Artikel</string>
+    <string name="ttsLanguage">Sprache auswählen</string>
+    <string name="ttsVoice">Sprachausgabemodul wählen</string>
+    <string name="ttsVolume">Lautstärke</string>
+    <string name="ttsSpeed">Sprechgeschwindigkeit</string>
+    <string name="ttsPlayPause">Wiedergabe / Pause</string>
+    <string name="ttsPitch">Stimmlage</string>
+    <string name="ttsOptions">Optionen</string>
+    <string name="ttsFastRewind"> Fast Forward</string>
+    <string name="ttsFastForward">Rücklauf</string>
+    <string name="ttsError">Fehler Sprachsynthese</string>
 </resources>

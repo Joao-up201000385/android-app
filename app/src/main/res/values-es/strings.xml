@@ -65,7 +65,6 @@ GAULUPEAU Jonathan — 2013-2015
     <string name="firstRun_d_optionalSettings_message">Para poder guardar páginas con la aplicación (y enviar cambios locales al servidor) necesitas colocar tu nombre de usuario y contraseña en la configuración.</string>
     <string name="go_to_settings">Ir a configuración</string>
     <string name="dismiss">Ignorar</string>
-    <string name="open_original">"Abrir original: "</string>
     <string name="settings_optionalCredentials">Credenciales opcionales</string>
     <string name="settings_optionalCredentialsDesc">Usadas principalmente para sincronizar con el servidor</string>
     <string name="settings_username">Usuario</string>
@@ -141,4 +140,16 @@ GAULUPEAU Jonathan — 2013-2015
         <item quantity="one">%d Artículo</item>
         <item quantity="other">%d Artículos</item>
     </plurals>
+    <string name="menuTTS">Síntesis de voz</string>
+    <string name="ttsAutoplayNextArticle"> Reproducción automática Siguiente artículo</string>
+    <string name="ttsLanguage">Elegir un Idioma</string>
+    <string name="ttsVoice">Seleccionar una Voz</string>
+    <string name="ttsVolume">Volumen</string>
+    <string name="ttsSpeed">Velocidad</string>
+    <string name="ttsPlayPause">Reproducir / Pausa</string>
+    <string name="ttsPitch">Tono</string>
+    <string name="ttsOptions">Opciones</string>
+    <string name="ttsFastRewind">Retroceso rápido</string>
+    <string name="ttsFastForward">Avance rápido</string>
+    <string name="ttsError">Síntesis de voz Error</string>
 </resources>

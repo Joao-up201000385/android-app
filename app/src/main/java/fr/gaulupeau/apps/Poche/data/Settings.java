@@ -24,6 +24,15 @@ public class Settings {
     public static final String HTTP_AUTH_PASSWORD = "http_auth_password";
     public static final String THEME = "theme";
     public static final String CONFIGURE_OPTIONAL_DIALOG_SHOWN = "configure_optional_dialog_shown";
+    public static final String WALLABAG_VERSION = "wallabag_version";
+    public static final String TTS_VISIBLE = "tts.visible";
+    public static final String TTS_OPTIONS_VISIBLE = "tts.options.visible";
+    public static final String TTS_SPEED = "tts.speed";
+    public static final String TTS_PITCH = "tts.pitch";
+    public static final String TTS_ENGINE = "tts.engine";
+    public static final String TTS_VOICE = "tts.voice";
+    public static final String TTS_LANGUAGE_VOICE = "tts.language_voice:";
+    public static final String TTS_AUTOPLAY_NEXT = "tts.autoplay_next";
 
     private SharedPreferences pref;
 
@@ -37,6 +46,10 @@ public class Settings {
 
     public void setInt(String key, int value) {
         pref.edit().putInt(key, value).commit();
+    }
+
+    public void setFloat(String key, float value) {
+        pref.edit().putFloat(key, value).commit();
     }
 
     public void setBoolean(String key, boolean value) {
@@ -58,6 +71,11 @@ public class Settings {
     public int getInt(String key, int defValue) {
         return pref.getInt(key, defValue);
     }
+
+    public float getFloat(String key, float defValue) {
+        return pref.getFloat(key, defValue);
+    }
+
 
     public boolean getBoolean(String key, boolean defValue) {
         return pref.getBoolean(key, defValue);

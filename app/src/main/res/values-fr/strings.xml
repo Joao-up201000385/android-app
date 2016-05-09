@@ -60,7 +60,6 @@ GAULUPEAU Jonathan — 2013
 <string name="d_bag_fail_text">Impossible de trouver une URL dans le texte partagé : \n</string>
     <string name="firstRun_d_welcome">Bienvenue sur wallabag</string>
 <string name="firstRun_d_configure">Merci de configurer cette application avec votre instance de wallabag pour commencer.</string>
-<string name="open_original">"Ouvrir l\'original : "</string>
 <string name="settings_optionalCredentials">Champs facultatifs</string>
 <string name="settings_optionalCredentialsDesc">Utilisés essentiellement pour pouvoir se synchroniser avec le serveur.</string>
 <string name="settings_username">Identifiant</string>
@@ -130,6 +129,7 @@ GAULUPEAU Jonathan — 2013
     <string name="themeName_dark_contrast">Sombre (contraste élevé)</string>
     <string name="themeName_light">Clair</string>
     <string name="themeName_light_contrast">Clair (contraste élevé)</string>
+    <string name="themeName_solarized">Solarisé</string>
     <string name="menu_readArticle_decreaseFontSize">Diminuer la taille de la police</string>
     <string name="menu_readArticle_increaseFontSize">Augmenter la taille de la police</string>
     <string name="menu_readArticle_switchFontFamily">Famille de police (sans/avec serif)</string>
@@ -139,4 +139,21 @@ GAULUPEAU Jonathan — 2013
     <string name="firstRun_d_optionalSettings_title">Mettre à jour les paramètres</string>
     <string name="go_to_settings">Aller aux paramètres</string>
     <string name="testConnection_errorMessage6">URL Incorrecte. Code d\'erreur : %d</string>
+    <string name="menuTTS">Synthèse Vocale</string>
+    <string name="ttsAutoplayNextArticle">Lecture automatique de l\'article suivant</string>
+    <string name="ttsLanguage">Choisir la Langue</string>
+    <string name="ttsVoice">Choisir la Voix</string>
+    <string name="ttsVolume">Volume</string>
+    <string name="ttsSpeed">Vitesse de lecture</string>
+    <string name="ttsPlayPause">Lecture / Pause</string>
+    <string name="ttsFastForward">Avance Rapide</string>
+    <string name="ttsFastRewind">Retour Rapide</string>
+    <string name="ttsPitch">Hauteur de la voix</string>
+    <string name="ttsOptions">Options</string>
+    <string name="ttsError">Erreur de Synthèse Vocale</string>
+    <string name="menuAbout">À propos</string>
+    <string name="aboutText">&lt;b>Application wallabag pour Android&lt;/b>&lt;br />wallabag est une application de lecture différée : elle permet simplement d’archiver une page web en ne conservant que le contenu. Les éléments superflus (menu, publicité, etc.) sont supprimés.</string>
+    <string name="readSpeed">Vitesse de lecture</string>
+    <string name="voiceHeight">Hauteur de voix</string>
+    <string name="readVolume">Volume de lecture</string>
 </resources>

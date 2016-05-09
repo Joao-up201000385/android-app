@@ -50,6 +50,7 @@ import fr.gaulupeau.apps.Poche.network.tasks.ToggleFavoriteTask;
 import fr.gaulupeau.apps.Poche.entity.Article;
 import fr.gaulupeau.apps.Poche.entity.ArticleDao;
 import fr.gaulupeau.apps.Poche.entity.DaoSession;
+import fr.gaulupeau.apps.Poche.tts.TtsFragment;
 
 public class ReadArticleActivity extends BaseActionBarActivity {
 
@@ -64,6 +65,8 @@ public class ReadArticleActivity extends BaseActionBarActivity {
     private TextView loadingPlaceholder;
     private LinearLayout bottomTools;
     private View hrBar;
+    private TtsFragment ttsFragment;
+    private MenuItem menuTTS;
 
     private Article mArticle;
     private ArticleDao mArticleDao;
@@ -83,6 +86,8 @@ public class ReadArticleActivity extends BaseActionBarActivity {
     private Long previousArticleID;
     private Long nextArticleID;
 
+    private boolean isResumed;
+    private boolean onPageFinishedCallPostponedUntilResume;
     private boolean loadingFinished;
 
     private Settings settings;
@@ -96,6 +101,7 @@ public class ReadArticleActivity extends BaseActionBarActivity {
 
         Intent intent = getIntent();
         long articleId = intent.getLongExtra(EXTRA_ID, -1);
+        Log.d(TAG, "onCreate() articleId=" + articleId);
         if(intent.hasExtra(EXTRA_LIST_FAVORITES)) {
             contextFavorites = intent.getBooleanExtra(EXTRA_LIST_FAVORITES, false);
         }
@@ -108,10 +114,20 @@ public class ReadArticleActivity extends BaseActionBarActivity {
         mArticle = mArticleDao.queryBuilder()
                 .where(ArticleDao.Properties.Id.eq(articleId)).build().unique();
 
+        if(mArticle == null) {
+            Log.e(TAG, "onCreate() Did not find article with articleId=" + articleId + ". Thus we" +
+                    " are not able to create this activity. Finish.");
+            finish();
+            return;
+        }
         titleText = mArticle.getTitle();
+        Log.d(TAG, "onCreate: titleText=" + titleText);
         originalUrlText = mArticle.getUrl();
+        Log.d(TAG, "onCreate: originalUrlText=" + originalUrlText);
         String htmlContent = mArticle.getContent();
+        Log.d(TAG, "onCreate: htmlContent=" + htmlContent);
         positionToRestore = mArticle.getArticleProgress();
+        Log.d(TAG, "onCreate: positionToRestore=" + positionToRestore);
 
         setTitle(titleText);
 
@@ -196,8 +212,14 @@ public class ReadArticleActivity extends BaseActionBarActivity {
         webViewContent.setWebChromeClient(new WebChromeClient() {
             @Override
             public boolean onConsoleMessage(ConsoleMessage cm) {
-                Log.d("WebView.onCM", String.format("%s @ %d: %s", cm.message(),
-                        cm.lineNumber(), cm.sourceId()));
+                boolean result = false;
+                if (ttsFragment != null) {
+                    result = ttsFragment.onWebviewConsoleMessage(cm);
+                }
+                if ( ! result) {
+                    Log.d("WebView.onCM", String.format("%s @ %d: %s", cm.message(),
+                            cm.lineNumber(), cm.sourceId()));
+                }
                 return true;
             }
         });
@@ -241,9 +263,15 @@ public class ReadArticleActivity extends BaseActionBarActivity {
                     super.onReceivedSslError(view, handler, error);
                 }
             }
+
         });
 
         if(fontSize != 100) setFontSize(webViewContent, fontSize);
+
+
+        if (ttsFragment != null) {
+                ttsFragment.onDocumentLoadStart(domainText, titleText);
+        }
 
         webViewContent.loadDataWithBaseURL("file:///android_asset/", htmlPage,
                 "text/html", "utf-8", null);
@@ -342,6 +370,13 @@ public class ReadArticleActivity extends BaseActionBarActivity {
                 openNextArticle();
             }
         });
+
+        if (settings.getBoolean(Settings.TTS_VISIBLE, false) && (ttsFragment == null)) {
+            ttsFragment = (TtsFragment)getSupportFragmentManager().findFragmentByTag("ttsFragment");
+            if (ttsFragment == null) {
+                toggleTTS(false);
+            }
+        }
     }
 
     private void loadingFinished() {
@@ -354,6 +389,9 @@ public class ReadArticleActivity extends BaseActionBarActivity {
         // should there be a pause between visibility change and position restoration?
 
         restoreReadingPosition();
+        if (ttsFragment != null) {
+            ttsFragment.onDocumentLoadFinished(webViewContent, scrollView);
+        }
     }
 
     private boolean openUrl(final String url) {
@@ -439,6 +477,9 @@ public class ReadArticleActivity extends BaseActionBarActivity {
     }
 
     private void openArticle(Long id) {
+        if (ttsFragment != null) {
+            ttsFragment.onOpenNewArticle();
+        }
         Intent intent = new Intent(this, ReadArticleActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra(ReadArticleActivity.EXTRA_ID, id);
@@ -447,7 +488,7 @@ public class ReadArticleActivity extends BaseActionBarActivity {
         startActivity(intent);
     }
 
-    private boolean openPreviousArticle() {
+    public boolean openPreviousArticle() {
         if(previousArticleID != null) {
             openArticle(previousArticleID);
             return true;
@@ -457,7 +498,7 @@ public class ReadArticleActivity extends BaseActionBarActivity {
         return false;
     }
 
-    private boolean openNextArticle() {
+    public boolean openNextArticle() {
         if(nextArticleID != null) {
             openArticle(nextArticleID);
             return true;
@@ -466,6 +507,7 @@ public class ReadArticleActivity extends BaseActionBarActivity {
         Toast.makeText(this, R.string.noNextArticle, Toast.LENGTH_SHORT).show();
         return false;
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -489,6 +531,9 @@ public class ReadArticleActivity extends BaseActionBarActivity {
                         ? R.drawable.abc_btn_rating_star_on_mtrl_alpha
                         : R.drawable.abc_btn_rating_star_off_mtrl_alpha, null)
         );
+
+        menuTTS = menu.findItem(R.id.menuTTS);
+        menuTTS.setChecked(ttsFragment != null);
 
         return true;
     }
@@ -515,6 +560,9 @@ public class ReadArticleActivity extends BaseActionBarActivity {
             case R.id.menuDecreaseFontSize:
                 changeFontSize(false);
                 return true;
+            case R.id.menuTTS:
+                toggleTTS(true);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -528,9 +576,24 @@ public class ReadArticleActivity extends BaseActionBarActivity {
             mArticle.setArticleProgress(getReadingPosition());
             mArticleDao.update(mArticle);
         }
-
         super.onStop();
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        isResumed = false;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        isResumed = true;
+        if (onPageFinishedCallPostponedUntilResume) {
+            onPageFinishedCallPostponedUntilResume = false;
+            onPageFinished();
+        }
+    }
+
 
     private double getReadingPosition() {
         String t = "ReadArticle.getPos";
@@ -570,6 +633,36 @@ public class ReadArticleActivity extends BaseActionBarActivity {
             scrollView.scrollTo(scrollView.getScrollX(), yOffset);
         }
     }
+
+    public boolean toggleTTS(boolean autoPlay) {
+        boolean result;
+        if (ttsFragment == null) {
+            ttsFragment = TtsFragment.newInstance(autoPlay);
+            getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.viewMain, ttsFragment, "ttsFragment")
+                .commit();
+            settings.setBoolean(Settings.TTS_VISIBLE, true);
+            ttsFragment.onDocumentLoadStart(domainText, titleText);
+            if (loadingFinished) {
+                ttsFragment.onDocumentLoadFinished(webViewContent, scrollView);
+            }
+            result = true;
+        } else {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .remove(ttsFragment)
+                    .commit();
+            ttsFragment = null;
+            settings.setBoolean(Settings.TTS_VISIBLE, false);
+            result = false;
+        }
+        if (menuTTS != null) {
+            menuTTS.setChecked(ttsFragment != null);
+        }
+        return result;
+    }
+
 
     private Long getAdjacentArticle(boolean previous) {
         QueryBuilder<Article> qb = mArticleDao.queryBuilder();
@@ -611,6 +704,13 @@ public class ReadArticleActivity extends BaseActionBarActivity {
     }
 
     private void onPageFinished() {
+        if ( ! isResumed) {
+            onPageFinishedCallPostponedUntilResume = true;
+            if (ttsFragment != null) {
+                ttsFragment.onDocumentLoadFinished(webViewContent, scrollView);
+            }
+            return;
+        }
         // dirty. Looks like there is no good solution
         webViewContent.postDelayed(new Runnable() {
             int counter;
