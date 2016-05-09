@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-Ola mundo...aqui vai mais uma tentativa!
-=======
 [Fork do grupo arqsoftdcc2016]
 
 
@@ -33,11 +30,3 @@ Say you have an account named "gdr" on "framabag.org" instance. The steps are as
 * URL: https://www.framabag.org/u/gdr
 * User ID: 1 (you will find this in the generated feed URL)
 * Token: you will find the token under Feeds in Config.
-
-
-É para testar...
-e estou a testar.......
-
-----
-E ves isto? :)
->>>>>>> b4222316b63c9df196591aa1cb860d988e87a95e
