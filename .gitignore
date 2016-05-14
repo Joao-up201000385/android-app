@@ -8,6 +8,7 @@ gen/
 *.ap_
 *.class
 *.bak
+*.zargo~
 .idea/
 .gradle/
 build/
