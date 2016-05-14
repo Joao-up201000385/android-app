@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatSpinner;
@@ -44,10 +45,12 @@ public class SettingsActivity extends BaseActionBarActivity
     private EditText editAPIToken;
     private AppCompatSpinner versionChooser;
     private CheckBox allCerts;
+    private CheckBox customSSLSettings;
     private AppCompatSpinner themeChooser;
     private EditText fontSizeET;
     private CheckBox serifFont;
     private EditText listLimit;
+    private CheckBox handleHttpScheme;
     private TextView textViewVersion;
     private EditText username;
     private EditText password;
@@ -79,10 +82,12 @@ public class SettingsActivity extends BaseActionBarActivity
         editAPIToken = (EditText) findViewById(R.id.APIToken);
         versionChooser = (AppCompatSpinner) findViewById(R.id.versionChooser);
         allCerts = (CheckBox) findViewById(R.id.accept_all_certs_cb);
+        customSSLSettings = (CheckBox) findViewById(R.id.custom_ssl_settings_cb);
         themeChooser = (AppCompatSpinner) findViewById(R.id.themeChooser);
         fontSizeET = (EditText) findViewById(R.id.fontSizeET);
         serifFont = (CheckBox) findViewById(R.id.ui_font_serif);
         listLimit = (EditText) findViewById(R.id.list_limit_number);
+        handleHttpScheme = (CheckBox) findViewById(R.id.handle_http_scheme);
 
         editPocheUrl.setText(wallabagSettings.wallabagURL);
         editPocheUrl.setSelection(editPocheUrl.getText().length());
@@ -92,6 +97,15 @@ public class SettingsActivity extends BaseActionBarActivity
         versionChooser.setSelection(settings.getInt(Settings.WALLABAG_VERSION, 2) - 1);
 
         allCerts.setChecked(settings.getBoolean(Settings.ALL_CERTS, false));
+
+        boolean customSSL = false;
+        if(settings.contains(Settings.CUSTOM_SSL_SETTINGS)) {
+            customSSL = settings.getBoolean(Settings.CUSTOM_SSL_SETTINGS, false);
+        } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1
+                && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            customSSL = true;
+        }
+        customSSLSettings.setChecked(customSSL);
 
         Themes.Theme[] themes = Themes.Theme.values();
         String[] themeOptions = new String[themes.length];
@@ -109,6 +123,8 @@ public class SettingsActivity extends BaseActionBarActivity
 
         serifFont.setChecked(settings.getBoolean(Settings.SERIF_FONT, false));
         listLimit.setText(String.valueOf(settings.getInt(Settings.LIST_LIMIT, 50)));
+
+        handleHttpScheme.setChecked(settings.isHandlingHttpScheme());
 
         username = (EditText) findViewById(R.id.username);
         username.setText(settings.getKey(Settings.USERNAME));
@@ -193,6 +209,7 @@ public class SettingsActivity extends BaseActionBarActivity
                 settings.setInt(Settings.WALLABAG_VERSION, versionChooser.getSelectedItemPosition() + 1);
 
                 settings.setBoolean(Settings.ALL_CERTS, allCerts.isChecked());
+                settings.setBoolean(Settings.CUSTOM_SSL_SETTINGS, customSSLSettings.isChecked());
                 Themes.Theme selectedTheme = Themes.Theme.values()[themeChooser.getSelectedItemPosition()];
                 settings.setString(Settings.THEME, selectedTheme.toString());
                 try {
@@ -202,6 +219,8 @@ public class SettingsActivity extends BaseActionBarActivity
                 try {
                     settings.setInt(Settings.LIST_LIMIT, Integer.parseInt(listLimit.getText().toString()));
                 } catch (NumberFormatException ignored) {}
+
+                settings.setHandleHttpScheme(handleHttpScheme.isChecked());
 
                 settings.setString(Settings.USERNAME, username.getText().toString());
                 settings.setString(Settings.PASSWORD, password.getText().toString());

@@ -1,7 +1,12 @@
 package fr.gaulupeau.apps.Poche.data;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+
+import fr.gaulupeau.apps.Poche.App;
+import fr.gaulupeau.apps.Poche.ui.HttpSchemeHandlerActivity;
 
 /**
  * @author Victor Häggqvist
@@ -15,6 +20,7 @@ public class Settings {
     public static final String USER_ID = "APIUsername";
     public static final String TOKEN = "APIToken";
     public static final String ALL_CERTS = "all_certs";
+    public static final String CUSTOM_SSL_SETTINGS = "custom_ssl_settings";
     public static final String FONT_SIZE = "font_size";
     public static final String SERIF_FONT = "serif_font";
     public static final String LIST_LIMIT = "list_limit";
@@ -33,6 +39,7 @@ public class Settings {
     public static final String TTS_VOICE = "tts.voice";
     public static final String TTS_LANGUAGE_VOICE = "tts.language_voice:";
     public static final String TTS_AUTOPLAY_NEXT = "tts.autoplay_next";
+    public static final int WALLABAG_WIDGET_MAX_UNREAD_COUNT = 999;
 
     private SharedPreferences pref;
 
@@ -76,9 +83,32 @@ public class Settings {
         return pref.getFloat(key, defValue);
     }
 
-
     public boolean getBoolean(String key, boolean defValue) {
         return pref.getBoolean(key, defValue);
+    }
+
+    public boolean contains(String key) {
+        return pref.contains(key);
+    }
+
+    public boolean isHandlingHttpScheme() {
+        return App.getInstance().getPackageManager()
+                .getComponentEnabledSetting(getHttpSchemeHandlingComponent())
+                == PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
+    }
+
+    public void setHandleHttpScheme(boolean handleHttpScheme) {
+        if(handleHttpScheme == isHandlingHttpScheme()) return;
+
+        int flag = (handleHttpScheme ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED
+                : PackageManager.COMPONENT_ENABLED_STATE_DISABLED);
+
+        App.getInstance().getPackageManager().setComponentEnabledSetting(
+                getHttpSchemeHandlingComponent(), flag, PackageManager.DONT_KILL_APP);
+    }
+
+    private ComponentName getHttpSchemeHandlingComponent() {
+        return new ComponentName(App.getInstance(), HttpSchemeHandlerActivity.class);
     }
 
 }

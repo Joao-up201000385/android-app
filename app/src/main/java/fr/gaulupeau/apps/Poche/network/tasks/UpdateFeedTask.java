@@ -27,6 +27,7 @@ import fr.gaulupeau.apps.Poche.data.DbConnection;
 import fr.gaulupeau.apps.Poche.network.WallabagConnection;
 import fr.gaulupeau.apps.Poche.entity.Article;
 import fr.gaulupeau.apps.Poche.entity.ArticleDao;
+import fr.gaulupeau.apps.Poche.ui.IconUnreadWidget;
 
 public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
 
@@ -211,6 +212,8 @@ public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
                 return false;
             }
 
+            IconUnreadWidget.triggerWidgetUpdate(App.getInstance().getApplicationContext());
+
             Log.d(TAG, "updateByFeed() finished successfully");
 
             return true;
@@ -298,9 +301,12 @@ public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
                     Item item = parseItem(parser);
 
                     Integer id = getIDFromURL(item.sourceUrl);
+                    if(id == null) {
+                        Log.w(TAG, "processFeed(): id is null, skipping; url: " + item.sourceUrl);
+                        continue;
+                    }
 
-                    if(updateType == UpdateType.Fast && latestID != null && id != null
-                            && latestID >= id) break;
+                    if(updateType == UpdateType.Fast && latestID != null && latestID >= id) break;
 
                     Article article = articleDao.queryBuilder()
                             .where(ArticleDao.Properties.ArticleId.eq(id)).build().unique();
@@ -463,7 +469,9 @@ public class UpdateFeedTask extends AsyncTask<Void, Void, Void> {
                     String idStr = url.substring(index + marker.length());
                     try {
                         return Integer.parseInt(idStr);
-                    } catch (NumberFormatException ignored) {}
+                    } catch (NumberFormatException nfe) {
+                        Log.w(TAG, "getIDFromURL() NumberFormatException; str: " + idStr, nfe);
+                    }
                 }
             }
         }
