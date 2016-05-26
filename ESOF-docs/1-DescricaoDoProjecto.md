@@ -33,10 +33,9 @@ O utilizador faz o download da aplicação e procede a sua instalação tendo du
 
 ou 
 
-- caso não tenhamos um servidor web próprio e nem fazemos a pretensão de o criar, podemos sempre utilizar uma informação fornecida pelo
-site do projeto Wallabag onde consta uma indicação de um serviço gratuito para usar o Wallabag que é o https://framabag.org/ , 
-que utiliza um host de terceiros para hospedar as páginas que queremos guardar para mais tarde ler em vez de ser o meu servidor web 
-as hospedar.
+- caso não tenhamos um servidor web próprio e nem fazemos a pretensão de o criar, podemos sempre utilizar a informação fornecida pelo
+site do projeto Wallabag onde consta a indicação de um serviço gratuito para usar o Wallabag que é o https://framabag.org/ , 
+que utiliza um host de terceiros para hospedar as páginas que queremos guardar para mais tarde ler.
 
 
 Wallabag - funcionamento?
