@@ -17,7 +17,7 @@ Wallabag - o que é?
 
 O Wallabag é uma aplicação que permite salvar artigos e páginas web para uma visualização posterior e em qualquer local. Portanto,
 se  faz parte do grupo de pessoa que tem por hábito abrir muitos separadores e ao fim do dia, apercebe-se que não teve tempo para os 
-ler, então a aplicação Wallabag é fortemente recomendada para salvar todos os separadores abertos e que por algum motivo não os 
+ler, então a aplicação Wallabag é fortemente recomendada,  salvando todos os separadores abertos e que por algum motivo não os 
 conseguiu ler. 
 
 Wallabag – Guarde e leia quando e onde quiser:
@@ -33,22 +33,21 @@ O utilizador faz o download da aplicação e procede a sua instalação tendo du
 
 ou 
 
-- caso não tenhamos um servidor web próprio e nem fazemos a pretensão de o criar, podemos sempre utilizar a informação fornecida pelo
-site do projeto Wallabag onde consta a indicação de um serviço gratuito para usar o Wallabag que é o https://framabag.org/ , 
-que utiliza um host de terceiros para hospedar as páginas que queremos guardar para mais tarde ler.
+- caso não tenhamos um servidor web próprio, nem façamos a pretensão de o criar, podemos sempre utilizar a informação fornecida pelo
+site do projeto Wallabag onde consta a indicação de um serviço gratuito para usar o Wallabag que é o https://framabag.org/ e 
+que utiliza um host de terceiros para hospedar as páginas web que queremos guardar para mais tarde ler.
 
 
 Wallabag - funcionamento?
 
 O funcionamento da aplicação é muito simples e fácil:
 o utilizador visualiza uma página da web que desperta o seu interesse e que por falta de tempo não a pode ler naquele momento, carrega 
-no ícone que aparece no canto superior direito do browser (representado por três quadrados pequenos). Surge uma janela com várias opções, 
-sendo uma delas “Partilhar página” e na qual clicamos. Surge de novo, uma outra janela com várias opções para fazer a partilha, sendo a
+no ícone que aparece no canto superior direito do browser (representado por três quadrados pequenos). Surge uma janela com várias opções, sendo uma delas “Partilhar página” e na qual clicamos. Surge de novo, uma outra janela com várias opções para fazer a partilha, sendo a
 nossa escolha a opção que tem o logótipo do Wallabag seguido da frase Bag it!.De imediato, é mostrado um pop up com a palavra Added, 
-confirmando que a página acabou de ser adicionada a nossa aplicação Wallabag. Portanto, sempre que abrirmos a aplicação Wallabag será 
+confirmando que a página acabou de ser adicionada à nossa aplicação Wallabag. Portanto, sempre que abrirmos a aplicação Wallabag será 
 mostrado no separador UNREAD, toda a informação que foi selecionada para mais tarde ser lida. 
 
-Sempre que abrimos a aplicação Wallabag é mostrado no centro superior três separador
+Sempre que abrimos a aplicação Wallabag é mostrado no centro superior três separadores:
 
 -FAVORITES (guarda as páginas já lidas ou artigos  e etiquetadas pelo utilizador como favoritas)
 
