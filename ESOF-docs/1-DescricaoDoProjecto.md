@@ -49,21 +49,8 @@ mostrado no separador UNREAD, toda a informação que foi selecionada para mais 
 
 Sempre que abrimos a aplicação Wallabag é mostrado no centro superior três separadores:
 
--FAVORITES (guarda as páginas já lidas ou artigos  e etiquetadas pelo utilizador como favoritas)
+-UNREAD (guarda todas as páginas web e artigos que não foram lidos)
 
--UNREAD (guarda todas as páginas web e artigos que não foram lidos) 
+-FAVOURITES (guarda as páginas já lidas ou artigos  e etiquetadas pelo utilizador como favoritas)
 
--ARCHIVED ( guarda os artigos e páginas web lidos e que achamos por bem arquivar para poderem ser consultados mais tarde se necessário)
-
-
-
-
-
-
-
-
-
-
-
-
-
+-ARCHIVE ( guarda os artigos e páginas web lidos e que achamos por bem arquivar para poderem ser consultados mais tarde se necessário)
