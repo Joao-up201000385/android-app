@@ -2,7 +2,7 @@
 <<<<<<< HEAD
 =======
 =======
->>>>>>> 2cd631192ffcbc6873dd08bb6dff684e299bc954
+
 [Fork do grupo arqsoftdcc2016]
 
 
