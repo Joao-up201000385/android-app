@@ -1,7 +1,7 @@
 #Introdução
 
 
-###Wallabag -Características :
+###Wallabag -Características 
 
 
 ####Com o Wallabag instalado é possível :
