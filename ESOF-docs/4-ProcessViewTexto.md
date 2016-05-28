@@ -4,7 +4,8 @@
 
 ![Process View diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/ProcessView.png)
 
-O pedido de armazenamento de uma página web no wallabag pode ser feito de duas formas:
+
+#####O pedido de armazenamento de uma página web no wallabag pode ser feito de duas formas:
 
 Temos uma página web que suscitou o nosso interesse para uma leitura posterior, pretendemos guardá-la clicando no menu opções e em seguida
 na opção "Bag It".Neste momento, é processado o conteúdo no sentido de analisar se tal página web pedida para ser salva pode ser armazenada
