@@ -1,6 +1,6 @@
 ###Process View
 
-##### Diagrama do Process View  do Wallabag
+##### Diagrama Process View  do Wallabag
 
 ![Process View diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/ProcessView.png)
 
