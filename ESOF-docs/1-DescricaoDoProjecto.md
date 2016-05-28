@@ -12,7 +12,7 @@ sempre acessíveis a todos os utilizadores.
 Face a essa situação, foi desenvolvida uma aplicação open source a que chamaram de Wallabag e que pode ser utilizada sem restrições.
 
 
-###Wallabag - o que é?
+###Wallabag – O que é?
 
 
 O Wallabag é uma aplicação que permite salvar artigos e páginas web para uma visualização posterior e em qualquer local. Portanto,
@@ -25,7 +25,7 @@ conseguiu ler.
 É um script PHP e MySQL Open Source que auxilia no armazenamento das páginas web preferidas para posteriormente ler com calma no desktop,
 portátil, tablet ou smartphone. 
 
-###Wallabag - instalação?
+###Wallabag – Instalação?
 
 O utilizador faz o download da aplicação e procede a sua instalação tendo duas opções: 
 
@@ -38,7 +38,7 @@ site do projeto Wallabag onde consta a indicação de um serviço gratuito para 
 que utiliza um host de terceiros para hospedar as páginas web que queremos guardar para mais tarde ler.
 
 
-###Wallabag - funcionamento?
+###Wallabag – Funcionamento?
 
 O funcionamento da aplicação é muito simples e fácil:
 o utilizador visualiza uma página da web que desperta o seu interesse e que por falta de tempo não a pode ler naquele momento, carrega 
@@ -49,8 +49,8 @@ mostrado no separador UNREAD, toda a informação que foi selecionada para mais 
 
 Sempre que abrimos a aplicação Wallabag é mostrado no centro superior três separadores:
 
--UNREAD (guarda todas as páginas web e artigos que não foram lidos)
+– UNREAD (guarda todas as páginas web e artigos que não foram lidos)
 
--FAVOURITES (guarda as páginas já lidas ou artigos  e etiquetadas pelo utilizador como favoritas)
+– FAVOURITES (guarda as páginas ou artigos já lidas e etiquetadas pelo utilizador como favoritos)
 
--ARCHIVE ( guarda os artigos e páginas web lidos e que achamos por bem arquivar para poderem ser consultados mais tarde se necessário)
+– ARCHIVE (guarda os artigos e páginas web lidos e que achamos por bem arquivar para poderem ser consultados mais tarde se necessário)
