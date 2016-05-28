@@ -9,8 +9,6 @@ gen/
 *.class
 *.bak
 *.zargo~
-*.jpg
-*.png
 .idea/
 .gradle/
 build/
