@@ -3,7 +3,6 @@
 ![Process View diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/ProcessView.png)
 ##### Diagrama Process View  do Wallabag
 
-
 #####O pedido de armazenamento de uma página web no wallabag pode ser feito de duas formas:
 
 Temos uma página web que suscitou o nosso interesse para uma leitura posterior, pretendemos guardá-la clicando no menu opções e em seguida
