@@ -1,7 +1,7 @@
 ###Wallabag -Características :
 
 
-Com o Wallabag instalado é possível :
+####Com o Wallabag instalado é possível :
 
 - salvar artigos, ler artigos, marcar como favoritos e arquivar artigos
 
