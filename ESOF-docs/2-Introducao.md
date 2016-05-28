@@ -36,7 +36,7 @@
 
 - etiquetando regras : cria uma regra para automaticamente atribuir uma etiqueta ás entradas
 
-- occitan, alemão, francês, turco, persa, romeno, polaco, dinamarquês, espanhol e traduções para o inglês
+- alemão, francês, turco, persa, romeno, polaco, dinamarquês, espanhol e traduções para o inglês
 
 - início rápido para iniciantes (quando não temos nenhuma entrada)
 
