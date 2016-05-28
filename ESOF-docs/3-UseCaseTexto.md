@@ -1,8 +1,7 @@
 ###Use Case Diagram 
 
-##### Diagrama Use Case do Wallabag
-
 ![Use cases diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/UseCaseDiagram.png)
+##### Diagrama Use Case do Wallabag
 
 Um utilizador desde que possua um smartphone ou computador portátil ou desktop ou mesmo tablet, abre um browser existente num desses 
 dispositivos com ligação a internet e acede a uma ou várias página web. Essas páginas web, contém muita informação que pretendemos
