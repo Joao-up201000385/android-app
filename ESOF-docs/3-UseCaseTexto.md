@@ -1,6 +1,6 @@
 ###Use Case Diagram 
 
-##### Diagrama de casos de utilização do Wallabag
+##### Diagrama Use Case do Wallabag
 
 ![Use cases diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/UseCaseDiagram.png)
 
