@@ -1,1 +1,3 @@
-###Logial View
+###Logical View
+
+Wallabag utiliza um servidor especificado pelo utilizador para guardar as p疊inas web. Este servidor vai sincronizar com os v疵ios dispositivos com as mesmas credenciais de log in. Qualquer opera鈬o sobre as p疊inas est・dependente do servidor sendo necess疵io comunicar com este para fazer qualquer altera鈬o tal como adicionar uma p疊ina, tendo de fazer sync para o servidor tornar a p疊ina que foi acabada de ser adicionada dispon咩el para ser vista atrav駸 do Wallabag permanecendo l・para ser visualizada mais tarde mesmo sem uma cone鈬o com o servidor em causa. Ao estabelecer de novo a liga鈬o para o servidor este vai encarregar-se de manter os dados no Wallabag id麩ticos com os do servidor revertendo quaisqueres mudan軋s feitas depois da cone鈬o ter sido desligada.
