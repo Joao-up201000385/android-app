@@ -1,6 +1,6 @@
 #Relatório
 
-##Descrição do Projecto
+#Descrição do Projecto
 
 
 A quantidade de informação com que hoje somos “bombardeados” e a constante falta de tempo para a ler no momento em que esta surge, 
@@ -12,7 +12,7 @@ sempre acessíveis a todos os utilizadores.
 Face a essa situação, foi desenvolvida uma aplicação open source a que chamaram de Wallabag e que pode ser utilizada sem restrições.
 
 
-Wallabag - o que é?
+**Wallabag - o que é?
 
 
 O Wallabag é uma aplicação que permite salvar artigos e páginas web para uma visualização posterior e em qualquer local. Portanto,
@@ -20,12 +20,12 @@ se  faz parte do grupo de pessoa que tem por hábito abrir muitos separadores e 
 ler, então a aplicação Wallabag é fortemente recomendada,  salvando todos os separadores abertos e que por algum motivo não os 
 conseguiu ler. 
 
-Wallabag – Guarde e leia quando e onde quiser:
+##Wallabag – Guarde e leia quando e onde quiser:
 
 É um script PHP e MySQL Open Source que auxilia no armazenamento das páginas web preferidas para posteriormente ler com calma no desktop,
 portátil, tablet ou smartphone. 
 
-Wallabag - instalação?
+##Wallabag - instalação?
 
 O utilizador faz o download da aplicação e procede a sua instalação tendo duas opções: 
 
@@ -38,7 +38,7 @@ site do projeto Wallabag onde consta a indicação de um serviço gratuito para 
 que utiliza um host de terceiros para hospedar as páginas web que queremos guardar para mais tarde ler.
 
 
-Wallabag - funcionamento?
+##Wallabag - funcionamento?
 
 O funcionamento da aplicação é muito simples e fácil:
 o utilizador visualiza uma página da web que desperta o seu interesse e que por falta de tempo não a pode ler naquele momento, carrega 
