@@ -1,5 +1,3 @@
-teste teste
-
 ### Use Case Diagram
 
 ![Use cases diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/UseCaseDiagram.png)
