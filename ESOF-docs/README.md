@@ -1,36 +1,25 @@
 # Relatório
 
-## Descrição do Projecto
+## Descrição do projecto
 
-
-A quantidade de informação com que hoje somos “bombardeados” e a constante falta de tempo para a ler no momento em que esta surge,
-levou ao desenvolvimento de aplicações que salvam artigos e páginas web que despertam o nosso interesse, para posteriormente serem
-lidos em forma de texto puro, transformando a sua interface numa espécie de jornal que pode ser lido em qualquer local. Embora muito
-úteis, aplicações como o Pocket e o Instapaper que permitem salvar artigos e páginas web para uma leitura posterior, são pagas e nem
-sempre acessíveis a todos os utilizadores.
+A quantidade de informação com que hoje somos “bombardeados” e a constante falta de tempo para a ler no momento em que esta surge, levou ao desenvolvimento de aplicações que salvam artigos e páginas web que despertam o nosso interesse, para posteriormente serem lidos em forma de texto puro, transformando a sua interface numa espécie de jornal que pode ser lido em qualquer local. Embora muito úteis, aplicações como o Pocket e o Instapaper que permitem salvar artigos e páginas web para uma leitura posterior, são pagas e nem sempre acessíveis a todos os utilizadores.
 
 Face a essa situação, foi desenvolvida uma aplicação open source a que chamaram de Wallabag e que pode ser utilizada sem restrições.
 
-
 ### Wallabag – O que é?
 
-
-O Wallabag é uma aplicação que permite salvar artigos e páginas web para uma visualização posterior e em qualquer local. Portanto,
-se  faz parte do grupo de pessoa que tem por hábito abrir muitos separadores e ao fim do dia, apercebe-se que não teve tempo para os
-ler, então a aplicação Wallabag é fortemente recomendada,  salvando todos os separadores abertos e que por algum motivo não os
+O Wallabag é uma aplicação que permite salvar artigos e páginas web para uma visualização posterior e em qualquer local. Portanto, se faz parte do grupo de pessoa que tem por hábito abrir muitos separadores e ao fim do dia, apercebe-se que não teve tempo para os ler, então a aplicação Wallabag é fortemente recomendada,  salvando todos os separadores abertos e que por algum motivo não os
 conseguiu ler.
 
 ### Wallabag – Instalação?
 
 O utilizador faz o download da aplicação e procede a sua instalação tendo duas opções:
 
-- instalar num servidor web próprio(caso tenha um) e criar um utilizador para poder utilizar o software
+- Instalar num servidor web próprio e criar um utilizador para poder utilizar o software.
 
 ou
 
-- caso não tenhamos um servidor web próprio, nem façamos a pretensão de o criar, podemos sempre utilizar a informação fornecida pelo
-site do projeto Wallabag onde consta a indicação de um serviço gratuito para usar o Wallabag que é o https://framabag.org/ e
-que utiliza um host de terceiros para hospedar as páginas web que queremos guardar para mais tarde ler.
+- Caso não tenhamos um servidor web próprio, nem façamos a pretensão de o criar, podemos sempre utilizar a informação fornecida pelo site do projeto Wallabag onde consta a indicação de um serviço gratuito para usar o Wallabag que é o https://framabag.org/ e que utiliza um host de terceiros para hospedar as páginas web que queremos guardar para mais tarde ler.
 
 
 ### Wallabag – Funcionamento?
@@ -55,8 +44,6 @@ Sempre que abrimos a aplicação Wallabag é mostrado no centro superior três s
 ![Use cases diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/UseCaseDiagram.png)
 ##### Diagrama Use Case do Wallabag
 
-
-
 A principal funcionalidade do Wallabag é guardar páginas web para uma leitura posterior. O processo de guardar páginas web é tão simples como: abrir o browser do nosso dispositivo Android, navegar até à página que queremos guardar, clicar no botão de opções do nosso dispositivo, selecionar a opção "Partilhar página" e depois “Bag it”. Surge um novo pop-up com a frase "Added" indicando que o Wallabag processou a página web e guardou-a como um artigo optimizado para leitura.
 
 Deste modo, passamos a ter artigos guardados e prontos a serem lidos. Abrimos a aplicação do Wallabag e automaticamente aparecem os nossos artigos listados. Clicando em cada um deles abre-se um leitor onde é possível, entre muitas opções, marcar o artigo como lido, marcar como favorito ou exportá-lo para outros formatos.
@@ -66,9 +53,9 @@ Finalmente, a partir da aplicação do Wallabag e com uma ligação à internet 
 ### Process View
 
 ![Process View diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/ProcessView.png)
-##### Diagrama Process View  do Wallabag
+##### Diagrama Process View do Wallabag
 
-##### O pedido de armazenamento de uma página web no wallabag pode ser feito de duas formas:
+###### O pedido de armazenamento de uma página web no wallabag pode ser feito de duas formas:
 
 Temos uma página web que suscitou o nosso interesse para uma leitura posterior, pretendemos guardá-la clicando no menu opções e em seguida
 na opção "Bag It".Neste momento, é processado o conteúdo no sentido de analisar se tal página web pedida para ser salva pode ser armazenada
@@ -79,14 +66,11 @@ aplicação do wallabag, falha e voltamos á página web de onde foi feita a sol
 ### Logical View
 
 ![Process View diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/LogicalView.png)
-
-##### Diagrama Logical View  do Wallabag
+##### Diagrama Logical View do Wallabag
 
 Wallabag utiliza um servidor especificado pelo utilizador para guardar as páginas web. Este servidor vai sincronizar com os vários dispositivos com as mesmas credenciais de log in. Qualquer operação sobre as páginas está dependente do servidor sendo necessário comunicar com este para fazer qualquer alteração tal como adicionar uma página, tendo de fazer sync para o servidor tornar a página que foi acabada de ser adicionada disponível para ser vista atravéz do Wallabag permanecendo lá para ser visualizada mais tarde mesmo sem uma conexão com o servidor em causa. Ao estabelecer de novo a ligação para o servidor este vai encarregar-se de manter os dados no Wallabag idênticos com os do servidor revertendo quaisqueres mudanças feitas depois da coneção ter sido desligada.
 
 ### Development View
-
-
 
 ![Development View Diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/DevelopmentView.png)
 ##### Diagrama Development View do Wallabag
@@ -130,4 +114,4 @@ De 0 a 5, avalio o meu desempenho com 3.
 
 ---
 
-Trabalho realizado pelo grupo arqsoftdcc2016_ da FCUP, para a cadeira de Arquitetura de Software.
+Trabalho realizado pelo grupo arqsoftdcc2016_ da FCUP, para a cadeira de Arquitetura de Software. O grupo «e constituido por
