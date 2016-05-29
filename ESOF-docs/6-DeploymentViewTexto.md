@@ -1,7 +1,7 @@
-#Deployment View
+### Deployment View
 
 ![Deployment View Diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/DeploymentPhysicalView.png "Deployment View Diagram")
-######Diagrama Deployment View do Wallabag  
+###### Diagrama Deployment View do Wallabag  
 
 .
 
