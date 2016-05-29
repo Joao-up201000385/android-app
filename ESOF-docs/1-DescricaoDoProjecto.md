@@ -20,11 +20,6 @@ se  faz parte do grupo de pessoa que tem por hábito abrir muitos separadores e 
 ler, então a aplicação Wallabag é fortemente recomendada,  salvando todos os separadores abertos e que por algum motivo não os 
 conseguiu ler. 
 
-###Wallabag – Guarde e leia quando e onde quiser:
-
-É um script PHP e MySQL Open Source que auxilia no armazenamento das páginas web preferidas para posteriormente ler com calma no desktop,
-portátil, tablet ou smartphone. 
-
 ###Wallabag – Instalação?
 
 O utilizador faz o download da aplicação e procede a sua instalação tendo duas opções: 
