@@ -106,6 +106,16 @@ Para descrever o Wallabag, existem dois tipos de hardware envolvidos, o smartpho
 
 ### Auto-avaliações
 
+Alexandra:
+
+Ana:
+
+André:
+
+João:
+
+Jonatan:
+
 ---
 
 Trabalho realizado pelo grupo arqsoftdcc2016_ da FCUP, para a cadeira de Arquitetura de Software.
