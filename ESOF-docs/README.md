@@ -98,7 +98,7 @@ A aplicação necessita de acesso a um servidor para realizar diversas operaçõ
 ### Deployment View
 
 ![Deployment View Diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/DeploymentPhysicalView.png "Deployment View Diagram")
-###### Diagrama Deployment View do Wallabag  
+##### Diagrama Deployment View do Wallabag  
 
 A Deployment View demonstra a topologia dos componentes de um software. É baseada nos componentes da camada física, assim como as conexões entre esses componentes. A representação gráfica é composta da seguinte maneira: As caixas representam os nodos (componentes de hardware) e os rectângulos dentro das caixas representam os artefactos (componentes de software).
 
