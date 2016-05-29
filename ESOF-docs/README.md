@@ -107,6 +107,16 @@ Para descrever o Wallabag, existem dois tipos de hardware envolvidos, o smartpho
 ### Auto-avaliações
 
 #####Alexandra:
+O contributo que dei para o relatório sobre o Wallabag foi o seguinte:
+Fiz o diagrama do UseCase e do ProcessView juntamente com o colega João para mostrar no  segundo checkpoint.
+Fiz o texto para descrição do projecto, o texto do diagrama do UseCase e o texto do Process View que posteriormente sofreram algumas alterações que o colega João Fez.
+Na ultima aula prática fizemos o diagrama Devployment View e corrigimos o diagrama do Development View que o colega André enviou mas  que não se encontrava de acordo com as convenções UML.
+Instalei o software adequado para correr aplicação wallbag como: BlueStack (emulador de Andoid) e o ArgoUML para o desenho dos diagramas.
+Compareci aos dois checkpoints que houve.
+Compareci a todas as aulas teóricas e práticas para o esclarecimento de dúvidas.
+Todos os dias e horas combinados via Slack, compareci sendo que a maior parte das vezes só eu e o colega João comparecemos para trocar ideias e dar andamento ao relatório.
+
+Por isso, numa escala de 0-5, acho que mereço um 4 ou 4.5.
 
 #####Ana:
 
