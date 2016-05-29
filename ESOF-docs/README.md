@@ -104,6 +104,8 @@ A Deployment View demonstra a topologia dos componentes de um software. É basea
 
 Para descrever o Wallabag, existem dois tipos de hardware envolvidos, o smartphone Android e o servidor de bases de dados. O smartphone Android deve ter instalado o aplicativo do Wallabag e um navegador de internet, já que o artigo salvo é compartilhado pelo navegador para o aplicativo, que o salva no servidor. Já o servidor deve ter uma base de dados instalada, para que o artigo seja salvo adequadamente. A base de dados pode ser de diferentes tipos, tais como MySQL, SQLite ou pgSQL. Utiliza-se apenas um servidor que pode ser acedido de diferentes maneiras, tal pelo aplicativo como também pelo próprio site.
 
+###### Auto-avaliações
+
 ---
 
 Trabalho realizado pelo grupo arqsoftdcc2016_ da FCUP, para a cadeira de Arquitetura de Software.
