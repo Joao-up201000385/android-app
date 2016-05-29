@@ -20,11 +20,6 @@ se  faz parte do grupo de pessoa que tem por hábito abrir muitos separadores e 
 ler, então a aplicação Wallabag é fortemente recomendada,  salvando todos os separadores abertos e que por algum motivo não os
 conseguiu ler.
 
-### Wallabag – Guarde e leia quando e onde quiser:
-
-É um script PHP e MySQL Open Source que auxilia no armazenamento das páginas web preferidas para posteriormente ler com calma no desktop,
-portátil, tablet ou smartphone.
-
 ### Wallabag – Instalação?
 
 O utilizador faz o download da aplicação e procede a sua instalação tendo duas opções:
@@ -43,7 +38,7 @@ que utiliza um host de terceiros para hospedar as páginas web que queremos guar
 O funcionamento da aplicação é muito simples e fácil:
 o utilizador visualiza uma página da web que desperta o seu interesse e que por falta de tempo não a pode ler naquele momento, carrega
 no ícone que aparece no canto superior direito do browser (representado por três quadrados pequenos). Surge uma janela com várias opções, sendo uma delas “Partilhar página” e na qual clicamos. Surge de novo, uma outra janela com várias opções para fazer a partilha, sendo a
-nossa escolha a opção que tem o logótipo do Wallabag seguido da frase Bag it!.De imediato, é mostrado um pop up com a palavra Added,
+nossa escolha a opção que tem o logótipo do Wallabag seguido da frase Bag it!. De imediato, é mostrado um pop up com a palavra Added,
 confirmando que a página acabou de ser adicionada à nossa aplicação Wallabag. Portanto, sempre que abrirmos a aplicação Wallabag será
 mostrado no separador UNREAD, toda a informação que foi selecionada para mais tarde ser lida.
 
@@ -51,6 +46,6 @@ Sempre que abrimos a aplicação Wallabag é mostrado no centro superior três s
 
 – UNREAD (guarda todas as páginas web e artigos que não foram lidos)
 
-– FAVOURITES (guarda as páginas ou artigos já lidas e etiquetadas pelo utilizador como favoritos)
+– FAVORITES (guarda as páginas ou artigos já lidas e etiquetadas pelo utilizador como favoritos)
 
-– ARCHIVE (guarda os artigos e páginas web lidos e que achamos por bem arquivar para poderem ser consultados mais tarde se necessário)
+– ARCHIVED (guarda os artigos e páginas web lidos e que achamos por bem arquivar para poderem ser consultados mais tarde se necessário)
