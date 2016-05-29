@@ -119,7 +119,7 @@ Todos os dias e horas combinados via Slack, compareci sendo que a maior parte da
 Por isso, numa escala de 0-5, acho que mereço um 4 ou 4.5.
 
 #####Ana:
-Neste projecto, a grande parte do meu contributo terá sido durante as aulas práticas, ao ajudar os colegas na realização dos diagramas, tendo sido pouco o meu trabalho em casa. Contribui também com o texto para um dos diagramas. 
+Neste projecto, a grande parte do meu contributo terá sido durante algumas das aulas práticas, ao ajudar os colegas na realização dos diagramas, tendo sido pouco o meu trabalho em casa. Contribui também com o texto para um dos diagramas. 
 De 0 a 5, avalio o meu desempenho com 3.
 
 #####André:
