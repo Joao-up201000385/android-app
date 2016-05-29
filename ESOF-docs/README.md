@@ -106,15 +106,15 @@ Para descrever o Wallabag, existem dois tipos de hardware envolvidos, o smartpho
 
 ### Auto-avaliações
 
-Alexandra:
+######Alexandra:
 
-Ana:
+######Ana:
 
-André:
+######André:
 
-João:
+######João:
 
-Jonatan:
+######Jonatan:
 
 ---
 
