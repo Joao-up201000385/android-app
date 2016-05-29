@@ -1,4 +1,3 @@
-
 ### Logical View
 
 ![Process View diagram](https://github.com/Joao-up201000385/android-app/blob/master/ESOF-docs/Diagramas/LogicalView.png)
