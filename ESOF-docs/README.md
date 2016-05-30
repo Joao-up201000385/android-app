@@ -88,9 +88,13 @@ A Deployment View demonstra a topologia dos componentes de um software. É basea
 
 Para descrever o Wallabag, existem dois tipos de hardware envolvidos, o smartphone Android e o servidor de bases de dados. O smartphone Android deve ter instalado o aplicativo do Wallabag e um navegador de internet, já que o artigo salvo é compartilhado pelo navegador para o aplicativo, que o salva no servidor. Já o servidor deve ter uma base de dados instalada, para que o artigo seja salvo adequadamente. A base de dados pode ser de diferentes tipos, tais como MySQL, SQLite ou pgSQL. Utiliza-se apenas um servidor que pode ser acedido de diferentes maneiras, tal pelo aplicativo como também pelo próprio site.
 
+---
+Relatório realizado pelo grupo Arqsoftdcc2016 da faculdade de Ciência de Computadores para a cadeira de Arquitetura de Software.
+
+---
 ### Auto-avaliações
 
-#####Alexandra:
+##### Alexandra:
 O contributo que dei para o relatório sobre o Wallabag foi o seguinte:
 Fiz o diagrama do UseCase e do ProcessView juntamente com o colega João para mostrar no  segundo checkpoint.
 Fiz o texto para descrição do projecto, o texto do diagrama do UseCase e o texto do Process View que posteriormente sofreram algumas alterações que o colega João Fez.
@@ -102,16 +106,18 @@ Todos os dias e horas combinados via Slack, compareci sendo que a maior parte da
 
 Por isso, numa escala de 0-5, acho que mereço um 4 ou 4.5.
 
-#####Ana:
-Neste projecto, a grande parte do meu contributo terá sido durante algumas das aulas práticas, ao ajudar os colegas na realização dos diagramas, tendo sido pouco o meu trabalho em casa. Contribui também com o texto para um dos diagramas. 
+##### Ana:
+Neste projecto, a grande parte do meu contributo terá sido durante algumas das aulas práticas, ao ajudar os colegas na realização dos diagramas, tendo sido pouco o meu trabalho em casa. Contribui também com o texto para um dos diagramas.
 De 0 a 5, avalio o meu desempenho com 3.
 
-#####André:
+##### André:
 
-#####João:
+##### João:
+Como parece que houve que houve desentendimentos entre membros do grupo sobre as contribuições de cada um, e como representante do grupo, sinto que devo descrever o que penso não só da minha avaliação própria e dos outros elementos do grupo.  
+***Eu/João***: Trabalhei para o projeto consistemente desde o inicio. Começei por ser o único a tomar iniciativa para estudar e perceber como correr a aplicação do projeto, e a única pessoa com preparação para o primeiro checkpoint do projeto. Compareci a todos os encontros no slack, compareci a todas as aulas práticas, esclareci dúvidas e adientei trabalho durante todas as aulas práticas, mostrei-me sempre disposto a ajudar colegas com dúvidas e os ajudei em bastantes ocasiões, completei todo o trabalho a que me comprometi e mais, e servi de mediador para esclarecer dúvidas que o grupo tinha com o projessor. Acho que mereço 4.5/5.  
+***Alexandra***: Apesar de só ter começado a contribuir para o projeto a partir do primeiro checkpoint, foi bastante empenhada e no total acabou por fazer tanto trabalho ou possivelmente mais do que eu. Tomou iniciativa em tentar organizar o grupo, compareceu a todos os encontros marcados no slack e fez todo o trabalho proposto e mais, compareceu a todos as aulas práticas, e fez contribuições nas aulas práticas. Diria que mereçe uma nota de 4.5/5.  
+***Ana***: Não tenho memoria de ter comparecido a algum encontro slack marcado, não realizou nenhum do trabalho acordado ou fez um único push no git excepto o comentário de auto-avaliação, e se bem me lembro apenas compareceu á primeira e última aula prática. Nota 0/5.  
+***André***: Compareceu a cerca de metade das aulas práticas mas foi átivo nelas. Não foi pontual aos encontros slack mas cumpriu algumas das tarefas acordadas.  Nota 2.5/5.  
+***Jonatan***: Compareceu a todas as aulas práticas. Não compareceu aos encontros slack marcados ou completou alguma das tarefas acordadas. Fez o primeiro push no fim-de-semana da entrega (28 Maio) com contribuíções mínimas. Nota 0.5/5.
 
-#####Jonatan:
-
----
-
-Trabalho realizado pelo grupo arqsoftdcc2016_ da FCUP, para a cadeira de Arquitetura de Software. O grupo «e constituido por
+##### Jonatan:
