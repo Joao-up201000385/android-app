@@ -97,14 +97,16 @@ Relatório realizado pelo grupo Arqsoftdcc2016 da faculdade de Ciência de Compu
 ##### Alexandra:
 O contributo que dei para o relatório sobre o Wallabag foi o seguinte:
 Fiz o diagrama do UseCase e do ProcessView juntamente com o colega João para mostrar no  segundo checkpoint.
-Fiz o texto para descrição do projecto, o texto do diagrama do UseCase e o texto do Process View que posteriormente sofreram algumas alterações que o colega João Fez.
+Fiz o texto para descrição do projecto, o texto do diagrama do UseCase e o texto do Process View que posteriormente sofreram algumas alterações que o colega João fez.
 Na ultima aula prática fizemos o diagrama Deployment View e corrigimos o diagrama do Development View que o colega André enviou mas  que não se encontrava de acordo com as convenções UML.
 Instalei o software adequado para correr aplicação wallbag como: BlueStack (emulador de Andoid) e o ArgoUML para o desenho dos diagramas.
 Compareci aos dois checkpoints que houve.
 Compareci a todas as aulas teóricas e práticas para o esclarecimento de dúvidas.
 Todos os dias e horas combinados via Slack, compareci sendo que a maior parte das vezes só eu e o colega João comparecemos para trocar ideias e dar andamento ao relatório.
 
-Por isso, numa escala de 0-5, acho que mereço um 4 ou 4.5.
+Por isso, numa escala de 0-5, acho que mereço um 4 ou 4.5. 
+E concordo com tudo o que o colega Joao disse.
+P.S:Sugiro aos Professores desta cadeira para fazerem o pull do histórico do GitHub e desta forma ver quem foram os elementos que contribuiram para o relatório antes do dia 27 e 28 de Maio. O colega André esqueceu-se de referir que estavamos a poucas horas de entregar o relatorio e nem sabia em que pastas os diagramas e textos se encontravam.
 
 ##### Ana:
 Neste projecto, a grande parte do meu contributo terá sido durante algumas das aulas práticas, ao ajudar os colegas na realização dos diagramas, tendo sido pouco o meu trabalho em casa. Contribui também com o texto para um dos diagramas.
