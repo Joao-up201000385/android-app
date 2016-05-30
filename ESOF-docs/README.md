@@ -105,7 +105,9 @@ Compareci a todas as aulas teóricas e práticas para o esclarecimento de dúvid
 Todos os dias e horas combinados via Slack, compareci sendo que a maior parte das vezes só eu e o colega João comparecemos para trocar ideias e dar andamento ao relatório.
 
 Por isso, numa escala de 0-5, acho que mereço um 4 ou 4.5. 
+
 E concordo com tudo o que o colega Joao disse.
+
 P.S:Sugiro aos Professores desta cadeira para fazerem o pull do histórico do GitHub e desta forma ver quem foram os elementos que contribuiram para o relatório antes do dia 27 e 28 de Maio. O colega André esqueceu-se de referir que estavamos a poucas horas de entregar o relatorio e nem sabia em que pastas os diagramas e textos se encontravam.
 
 ##### Ana:
