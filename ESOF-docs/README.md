@@ -110,9 +110,6 @@ E concordo com tudo o que o colega Joao disse.
 
 P.S:Sugiro aos Professores desta cadeira para fazerem o pull do histórico do GitHub e desta forma ver quem foram os elementos que contribuiram para o relatório antes do dia 27 e 28 de Maio. O colega André esqueceu-se de referir que estavamos a poucas horas de entregar o relatorio e nem sabia em que pastas os diagramas e textos se encontravam.
 
-##### Ana:
-Neste projecto, a grande parte do meu contributo terá sido durante algumas das aulas práticas, ao ajudar os colegas na realização dos diagramas, tendo sido pouco o meu trabalho em casa. Contribui também com o texto para um dos diagramas.
-De 0 a 5, avalio o meu desempenho com 3.
 
 ##### André:
 Cumpri sempre com o que me era pedido e esperado como também com os prazos que me davam.
