@@ -134,3 +134,8 @@ Como parece que houve que houve desentendimentos entre membros do grupo sobre as
 ***Jonatan***: Compareceu a todas as aulas práticas. Não compareceu aos encontros slack marcados ou completou alguma das tarefas acordadas. Fez o primeiro push no fim-de-semana da entrega (28 Maio) com contribuíções mínimas. Nota 0.5/5.
 
 ##### Jonatan:
+Sinceramente, foi um trabalho muito enrolado! Era só ter dividido o trabalho no início e cada um faria a sua parte, mas como isso não aconteceu, a Alexandra e o João começaram a fazer o trabalho sem o resto do grupo. Comecei ajudando no início do Diagrama Use Case e assim que me foi atribuída uma tarefa, fiz ela e entreguei na data combinada. Aliás, fiz tudo o que me foi pedido. E quanto ao Slack, eu compareci em todos os encontros online, mas como nada era resolvido naquele chat, acabava por sair mesmo.
+Não creio que isso conte como algo a levar em consideração, mas também instalei o emulador Android e o aplicativo Wallabag no meu portátil logo nas primeiras aulas para ter ideia de como funcionava... Falando nisso, se não fosse a minha sugestão de fazermos o trabalho sobre o aplicativo Wallabag, creio que estaríamos escolhendo o assunto até agora...
+Obs.: A data de entrega é 30/05 às 11h, e não 28/05.
+Obs2.: Teve vezes que acompanhei o chat no Slack através do telemóvel, já que fiquei uns 14 dias sem meu portátil devido à queima do HD.
+Obs3.: Nota 3 de 5.
